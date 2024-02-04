@@ -485,7 +485,7 @@ main #home .anmol-image-container .resume-cover img {
 }
 #contact span:has(input:focus)::before,
 #contact span:has(input:not(:placeholder-shown))::before {
-	top: -150%;
+	top: -10%;
 	background-color: rgb(250, 250, 0);
 	padding: 1px 3px;
 	border-radius: 10px;
