@@ -200,7 +200,7 @@ main #strip2 > div {
 main #home .left {
 	color: white;
 }
-main #home .left ,maim #home .right{
+main #home .left , main #home .right{
 	flex-shrink:0;
 }
 main #home .left .who-am-i {
