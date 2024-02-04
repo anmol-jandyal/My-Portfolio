@@ -1,0 +1,496 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	--nav-height: 60px;
+	--strip-background: rgb(179, 177, 177);
+}
+
+@font-face {
+	font-family: canopee;
+	src: url(assets/fonts/canopee-regular/616fd1dd00cf6c70f978fc69_Canopee.woff2);
+}
+html,
+body {
+	height: 100%;
+	background-color: rgba(41, 41, 40, 0.977);
+}
+a {
+	all: unset;
+}
+a:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+/* ---------=====================---------------------- */
+#portfolio-pages {
+	position: relative;
+}
+
+#nav-bar {
+	background-color: rgba(0, 0, 0, 0.381);
+
+	backdrop-filter: blur(50px);
+	padding: 0 10px;
+	height: var(--nav-height);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+#nav-bar nav {
+	width: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	color: yellow;
+}
+
+#top-logo img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+main {
+	position: relative;
+}
+main .page {
+	padding: 20px auto 20px auto;
+
+	min-height: calc(100svh - 60px);
+	overflow: hidden;
+
+	border-top: red 1px solid;
+	border-bottom: red 1px solid;
+}
+
+/* main page 1 home page */
+/* animations */
+@keyframes whoami {
+	0%,
+	100% {
+		content: "_";
+	}
+	1%,
+	72% {
+		content: "W_";
+	}
+	2%,
+	70% {
+		content: "We_";
+	}
+	4%,
+	65% {
+		content: "Web_";
+	}
+	5%,
+	60% {
+		content: "Web D_";
+	}
+	7%,
+	55% {
+		content: "Web De_";
+	}
+	8%,
+	50% {
+		content: "Web Dev_";
+	}
+	10%,
+	47% {
+		content: "Web Deve_";
+	}
+	13%,
+	43% {
+		content: "Web Devel_";
+	}
+	15%,
+	40% {
+		content: "Web Develo_";
+	}
+	17%,
+	37% {
+		content: "Web Develop_";
+	}
+	19%,
+	35% {
+		content: "Web Develope_";
+	}
+	21%,
+	33% {
+		content: "Web Developer_";
+	}
+}
+
+@keyframes movingText {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-120%);
+	}
+}
+main #home {
+	padding: 0 100px;
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+main #strips {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+
+main #strip1,
+#strip2 {
+	position: absolute;
+	background-color: var(--strip-background);
+	width: 120%;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: nowrap;
+	font-size: 20px;
+
+	gap: 60px;
+
+	overflow: hidden;
+}
+main #strip1 {
+	z-index: 1;
+	left: -10%;
+	bottom: 60%;
+	transform: rotateZ(-25deg);
+}
+main #strip1 > h2,
+#strip2 > div {
+	position: relative;
+
+	animation-name: movingText;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: linear;
+}
+main #strip2 {
+	left: 0;
+	bottom: 0;
+}
+main #strip2 > div {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 40px;
+	justify-content: space-evenly;
+	flex-shrink: 0;
+}
+
+main #home .left {
+	color: white;
+}
+
+main #home .left .who-am-i {
+	position: relative;
+	z-index: 2;
+	font-size: 30px;
+}
+main #home .left .who-am-i p {
+	font-style: italic;
+}
+main #home .left .who-am-i span::before {
+	content: "";
+
+	font-size: 40px;
+	font-weight: bold;
+	color: yellow;
+
+	animation-name: whoami;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+}
+
+main #home .left .who-am-i > div h1 {
+	display: inline-block;
+
+	font-family: canopee;
+	font-size: 70px;
+	transition: all;
+	transition-duration: 1s;
+	padding: 3px;
+	color: black;
+	background-color: yellow;
+}
+main #home .left .who-am-i > div h1:hover {
+	transform: rotateZ(180deg);
+	cursor: crosshair;
+}
+
+main #home .anmol-image-container {
+	position: relative;
+	background-color: rgba(57, 60, 60, 0.703);
+	border-radius: 6%;
+
+	max-height: 500px;
+	overflow: hidden;
+}
+
+main #home .anmol-image-container .resume-cover {
+	background-color: rgba(91, 87, 87, 0.384);
+
+	color: black;
+	font-size: 20px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	backdrop-filter: blur(10px);
+
+	opacity: 0;
+
+	gap: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	transition: all;
+	transition-duration: 1s;
+}
+main #home .anmol-image-container .resume-cover .links img {
+	width: 30px;
+}
+
+main #home .anmol-image-container:hover > .resume-cover {
+	opacity: 100%;
+}
+main #home .anmol-image-container .resume-cover a {
+	background-color: yellow;
+	padding: 10px;
+	border-radius: 20px;
+}
+main #home .anmol-image-container .resume-cover img {
+	width: 20px;
+	vertical-align: middle;
+}
+
+/* about page  */
+
+/* education */
+
+#about h1,
+#contact h1 {
+	margin-top: 30px;
+	padding: 4px;
+	letter-spacing: 3px;
+	font-family: canopee;
+	color: rgb(0, 0, 0);
+	text-align: center;
+
+	border-radius: 20px;
+	background-color: rgb(225, 217, 141);
+}
+#about .education .edu-container {
+	margin-top: 60px;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+	flex-wrap: wrap;
+	margin: 40px auto;
+	padding: 5px 10px;
+}
+#about .education .edu-container > .left {
+	font-size: 1.5rem;
+	color: rgb(210, 205, 65);
+	font-weight: 400;
+}
+#about .education .edu-container > .right {
+	font-size: 1.2rem;
+	color: white;
+}
+
+/*hobbies  */
+
+#about .hobbies .card-container {
+	margin: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+#about .hobbies .card {
+	height: 250px;
+	width: 250px;
+	background-color: rgb(172, 172, 156);
+
+	border: rgb(115, 141, 13) 5px solid;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+
+	flex-shrink: 0;
+}
+
+#about .hobbies .card > div {
+	width: 80%;
+	height: 70%;
+
+	overflow: hidden;
+}
+#about .hobbies .card > div:hover > img {
+	width: 120%;
+	height: 120%;
+}
+#about .hobbies .card img {
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+	object-position: center;
+
+	transition: all;
+	transition-duration: 2s;
+}
+
+/* SKILLS */
+#about .skills > div {
+	padding: 30px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 40px;
+
+	color: rgba(174, 173, 173, 0.66);
+	font-size: 20px;
+}
+#about .skills > div .card {
+	flex-shrink: 0;
+}
+#about .skills > div .card img {
+	/* width: 50px; */
+	height: 50px;
+}
+#about .skills > div .card h4 {
+	margin: auto;
+}
+
+/* ================contact page====================== */
+
+#contact > form > * {
+	margin: 15px;
+}
+#contact legend,
+#contact label[for="country"] {
+	margin-left: 20px;
+	color: bisque;
+	font-family: canopee;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+}
+
+#contact fieldset {
+	padding: 20px;
+	position: relative;
+}
+#contact .designation-container {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+#contact label {
+	color: white;
+	font-size: 1.1rem;
+	letter-spacing: 1.5px;
+}
+
+#contact option {
+	background-color: var(contact-back);
+}
+#contact input,
+#contact textarea,
+#contact select {
+	background-color: var(--strip-background);
+
+	font-size: 1.2rem;
+
+	padding: 10px;
+
+	border: rgb(220, 220, 141) solid 2px;
+	border-radius: 30px;
+}
+
+#contact span {
+	position: relative;
+	color: rgb(0, 0, 0);
+	font-weight: 900;
+}
+#contact .name-email {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 30px;
+}
+#contact .name-email input::placeholder,
+#contact #comment::placeholder {
+	color: transparent;
+}
+#contact span::before {
+	position: absolute;
+
+	top: 5%;
+	left: 3%;
+
+	transition: all 1s;
+}
+#contact .first-name::before {
+	content: "First Name";
+}
+#contact .last-name::before {
+	content: "Last Name";
+}
+#contact .email::before {
+	content: "Email";
+}
+#contact .comment-container::before {
+	content: "Enter Your Message";
+}
+#contact .comment-container {
+	display: block;
+}
+#contact .comment-container:has(textarea:not(:placeholder-shown))::before,
+#contact .comment-container:has(textarea:focus)::before {
+	top: -10%;
+	background-color: rgb(250, 250, 0);
+	padding: 1px 3px;
+	border-radius: 10px;
+}
+#contact span:has(input:focus)::before,
+#contact span:has(input:not(:placeholder-shown))::before {
+	top: -150%;
+	background-color: rgb(250, 250, 0);
+	padding: 1px 3px;
+	border-radius: 10px;
+}
+
+#contact textarea {
+	width: 90%;
+}
