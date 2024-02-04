@@ -143,6 +143,8 @@ main #home {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+flex-wrap:wrap;
+gap:20px;
 }
 main #strips {
 	height: 100%;
@@ -198,7 +200,9 @@ main #strip2 > div {
 main #home .left {
 	color: white;
 }
-
+main #home .left ,maim #home .right{
+	flex-shrink:0;
+}
 main #home .left .who-am-i {
 	position: relative;
 	z-index: 2;
