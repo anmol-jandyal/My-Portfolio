@@ -250,13 +250,12 @@ main #home .anmol-image-container {
 
 	max-height: 500px;
 	overflow: hidden;
-
-	width: 80%;
 }
 
 main #homoe .anmol-image-container img {
 	width: 100%;
 	object-fit: cover;
+	object-position: center;
 }
 main #home .anmol-image-container .resume-cover {
 	background-color: rgba(91, 87, 87, 0.384);
@@ -522,6 +521,9 @@ main #home .anmol-image-container .resume-cover img {
 		flex-direction: column;
 		padding: 0px 10px;
 		gap: 10px;
+	}
+	main #home .anmol-image-container {
+		width: 80%;
 	}
 
 	main #home .left .who-am-i > div h1 {
